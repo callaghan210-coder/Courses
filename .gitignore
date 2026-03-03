@@ -1,0 +1,22 @@
+# AL build output
+*.app
+
+# VS Code settings
+.vscode/
+
+# AL cache
+.alcache/
+
+# Symbols
+.symbols/
+
+# RAD files
+rad.json
+
+# User files
+*.rdl.data
+*.docx
+*.xlsx
+
+# Windows
+Thumbs.db
