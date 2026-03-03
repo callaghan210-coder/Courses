@@ -38,7 +38,7 @@ pageextension 50124 EmployeeExt extends "Employee Card"
     actions
     {
         // Add changes to page actions here;
-        addafter("A&bsences")
+        addafter("Co&mments")
         {
             action("My Courses")
             {
@@ -46,15 +46,12 @@ pageextension 50124 EmployeeExt extends "Employee Card"
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 Image = Process;
+                Visible = true;
                 RunObject = page "Courses List";
 
-                trigger OnAction()
-                var
-                    myInt: Integer;
-                begin
-                    run
-                end;
+
             }
+
         }
     }
 

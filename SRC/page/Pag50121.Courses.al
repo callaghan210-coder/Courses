@@ -87,12 +87,18 @@ page 50121 Courses
     {
         area(Processing)
         {
-            action(ActionName)
+            action("My Codeunt")
             {
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Image = Process;
 
                 trigger OnAction()
+                var
+                    Exmpl: Codeunit Example;
                 begin
-
+                    Exmpl.Run();
                 end;
             }
         }
