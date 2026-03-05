@@ -101,6 +101,20 @@ page 50121 Courses
                     Exmpl.Run();
                 end;
             }
+            action(Example2)
+            {
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Image = Process;
+
+                trigger OnAction()
+                var
+                    Exmpl: Codeunit Example2;
+                begin
+                    Exmpl.Run();
+                end;
+            }
         }
     }
     trigger OnOpenPage()
