@@ -34,10 +34,10 @@ table 50120 Course
             var
                 myInt: Integer;
             begin
-                if price > 10 then begin
+                if price > 10000 then begin
                     Error('price is illegal');
                 end else
-                    Price := 100;
+                    Price := 100000;
 
             end;
         }
@@ -69,6 +69,10 @@ table 50120 Course
         field(93; "Carreer Objective"; text[2048])
         {
             DataClassification = ToBeClassified;
+        }
+        field(94; Status; Option)
+        {
+            OptionMembers = Open,"Pending Approval",Approved,Rejected;
         }
     }
 

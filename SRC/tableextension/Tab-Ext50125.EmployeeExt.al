@@ -12,5 +12,18 @@ tableextension 50125 EmployeeExt extends Employee
             Caption = 'Degree Name';
             DataClassification = ToBeClassified;
         }
+        field(50122; Age; Integer)
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Age';
+            TableRelation = User;
+            trigger OnValidate()
+            var
+                Emp: record Employee;
+            begin
+                Emp.Get(Age)
+                //logic
+            end;
+        }
     }
 }

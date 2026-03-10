@@ -43,6 +43,10 @@ page 50121 Courses
                 {
 
                 }
+                field(Status; Rec.Status)
+                {
+
+                }
                 field(TotalUnitCost; Rec.TotalUnitCost)
                 {
                     ApplicationArea = all;
@@ -113,6 +117,21 @@ page 50121 Courses
                     Exmpl: Codeunit Example2;
                 begin
                     Exmpl.Run();
+                end;
+            }
+            action(SendForApproval)
+            {
+                Caption = 'Send For Approval';
+                Image = SendApprovalRequest;
+                trigger OnAction()
+                var
+                    CourseWorkflowEvents: Codeunit "Course Workflow Events";
+                    CourseWorkflowResponse: Codeunit "Course Workflow Response";
+                begin
+                    Rec.Status := Rec.Status::"Pending Approval";
+                    Rec.Modify();
+                    CourseWorkflowEvents.OnCourseApprovalRequested(Rec);
+                    CourseWorkflowResponse.Run();
                 end;
             }
         }
