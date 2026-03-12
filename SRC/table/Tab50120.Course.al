@@ -73,6 +73,7 @@ table 50120 Course
         field(94; Status; Option)
         {
             OptionMembers = Open,"Pending Approval",Approved,Rejected;
+            Editable = false;
         }
     }
 
